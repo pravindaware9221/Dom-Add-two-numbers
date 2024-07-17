@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+    <style>
+        .cont {
+            margin: 8% 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .h1{
+            padding: 5px 25px;
+            border: 2px solid black;
+            text-align: center;
+            font-size: 40px;
+            color: tomato;
+            
+        }
+
+        .input {
+            font-size: 30px;
+            width: 220px;
+            margin: 10px auto;
+            text-align: center;
+            
+        }
+
+        .result {
+            margin: 0;
+            padding: 0;
+            font-size: 35px;
+        }
+
+        .submit-btn {
+            width: 130px;
+            margin-top: 60px;
+            font-size: 30px;
+            margin-top: 70px;
+            margin-bottom: 20px;
+            height: 50px;
+            border-radius: 30px;
+        }
+
+        @media screen and (max-width : 600px) {
+            .container {
+                height: 400px;
+                width: 450px;
+                margin: 0;
+                padding: 0;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="cont">
+            <h2 class="h1">Add Two Number</h2>
+            <input type="text" class="input" id="num1" onkeyup="sumcal()"></button>
+            <input type="text" class="input" id="num2" onkeyup="sumcal()"></button>
+            <p id="result" class="result">
+            </p>
+            <div>
+
+                <button type="button" class="submit-btn" onclick="Reset()">
+                    Reset
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <script>
+            function sumcal() {
+                const n1 = document.getElementById("num1")
+                const n2 = document.getElementById("num2")
+                const sum = parseFloat(n1.value || 0) + parseFloat(n2.value || 0)
+                const resultElement = document.getElementById("result")
+                resultElement.innerText = Sum = `${sum}`
+            }
+            function Reset() {
+                const n1 = document.getElementById("num1")
+                n1.value = ""
+                const n2 = document.getElementById("num2")
+                n2.value = ""
+                const resultElement = document.getElementById("result")
+                resultElement.innerText = ""
+
+            }
+        </script>
+</body>
+
+</html>
